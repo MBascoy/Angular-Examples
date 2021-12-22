@@ -1,0 +1,31 @@
+<form [formGroup]="userForm" #formDir="ngForm">
+
+<input type="text" formControlName="name" />
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+    <div *ngIf="name.errors?.['required']">
+        Name is required.
+    </div>
+    <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 4 characters long.
+    </div>
+</div>
+
+<br/><br/>
+<input type="text" formControlName="edad" />
+
+<div *ngIf="edad.invalid && (edad.dirty || edad.touched)">
+
+    <div *ngIf="edad.errors?.['pattern']">
+        edad must be a number.
+    </div>
+
+</div>
+
+<br><br>
+<input type="button" [disabled]="userForm.invalid" value="Enviar">
+
+<p>Nombre: {{userForm.get('name')?.value}}; Edad: {{userForm.get('edad')?.value}}<p>
+</form>
+
