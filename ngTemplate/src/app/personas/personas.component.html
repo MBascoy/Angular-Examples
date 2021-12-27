@@ -1,0 +1,13 @@
+<p>personas works!</p>
+
+<button (click)="nuevaPersona()">Añadir Persona</button>
+
+<div *ngIf="personas.length > 0 else sinPersonas">Listado personas:
+
+    <ul>
+        <li *ngFor="let i of personas">{{i}}</li>
+    </ul>
+
+</div>
+
+<ng-template #sinPersonas><p>No hay personas</p></ng-template>
