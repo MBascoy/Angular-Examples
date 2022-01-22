@@ -9,13 +9,14 @@ export class EventInputComponent implements OnInit {
 
   constructor() { }
 
-  name:string = "Pulsa Aqui";
+  public name:string = "Eventos recibidos:";
+  public numberOfInputs: number = 0;
 
   ngOnInit(): void {
   }
 
-  changeName(){
-    this.name = "Mario";
+  increaseInput(){
+    this.numberOfInputs++;
   }
 
 }
