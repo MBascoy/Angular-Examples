@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 export interface messageRequest {
   userId: number;
   id:number;
-  title:string;
+  name:string;
   completed:boolean;
 }
 
@@ -16,6 +16,6 @@ export class HttpViewService {
   constructor(private http:HttpClient) { }
 
   getInfo(){
-    return this.http.get<messageRequest[]>("https://jsonplaceholder.typicode.com/todos")
+    return this.http.get<messageRequest[]>("http://127.0.0.1:8080/api/members")
   }
 }

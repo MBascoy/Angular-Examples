@@ -9,7 +9,8 @@ export class Test1Component implements AfterViewInit {
 
   constructor() { }
 
-  @ViewChild('someInput') someInput: ElementRef;
+  @ViewChild('someInput') someInput: ElementRef = new ElementRef("");
+  
   ngAfterViewInit() {
     this.someInput.nativeElement.style = "background-color:lightgreen;";
     this.someInput.nativeElement.innerHTML = "Enlace a google"
