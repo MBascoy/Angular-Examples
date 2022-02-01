@@ -30,4 +30,16 @@ describe('HttpViewService', () => {
     expect(req.request.method).toEqual('GET');
     req.flush(finalData);
   });
+
+  it('Check ERROR from HTTP server', async () => {
+    let http = TestBed.inject(HttpTestingController);
+    let errResponse: any;
+    const mockErrorResponse = { status: 500, statusText: 'Server not available' };
+    const data = 'An error occur on the server side';
+    service.getInfo().subscribe({
+      error: (e) => (errResponse = e)
+  });
+    http.expectOne("http://127.0.0.1:8080/api/members").flush(data, mockErrorResponse);
+    expect(errResponse).toEqual(new Error("Error on request"));
+  });
 });
