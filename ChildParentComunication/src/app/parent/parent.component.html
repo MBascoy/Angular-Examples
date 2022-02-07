@@ -1,0 +1,9 @@
+<p>parent works!</p>
+
+<p>Name: {{fullName}}</p>
+
+<app-child
+    [name] = "'Manuel'"
+    [surname]="'Bascoy'"
+    (childEmitter)="printName($event)">
+</app-child>
