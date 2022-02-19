@@ -1,0 +1,26 @@
+<p>Template driven form en un mismo componente</p>
+<input [(ngModel)]="textoInput"/>
+
+<p>Texto: {{textoInput}}</p>
+
+<hr>
+
+<p>Template driven form padre hijo</p>
+<app-hijo [(dataInput)]="dataInput"></app-hijo>
+
+<p>Padre: <input [(ngModel)]="dataInput" /></p>
+
+<p>Texto: {{dataInput}}</p>
+
+<hr>
+
+<p>Template driven form padre hijo validation</p>
+<app-hijo-validation [(dataInputValidation)]="dataInputValidation"></app-hijo-validation>
+
+<p>Padre: <input minlength="5"  [(ngModel)]="dataInputValidation" #dataValidation="ngModel" /></p>
+
+<div [hidden]="dataValidation.valid">
+    Input not valid
+</div>
+
+{{dataInputValidation}}

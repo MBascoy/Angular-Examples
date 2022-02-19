@@ -1,0 +1,5 @@
+<p>Hijo <input pattern="[0-9]*" (input)="dataEmitter()" [(ngModel)]="dataInputValidation" #dataValidation="ngModel" /></p>
+
+<div [hidden]="dataValidation.valid || dataValidation.pristine">
+    Invalid data
+</div>
