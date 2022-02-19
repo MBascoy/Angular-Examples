@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Optional, Self } from '@angular/core';
+import { Component, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,6 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 export class ChildComponent implements ControlValueAccessor {
 
   @Input() public label!: string;
-  @Input() public placeholder!: string;
   @Input() public required = false;
   @Input() public minlength = 0;
   @Input() public disabled = false;

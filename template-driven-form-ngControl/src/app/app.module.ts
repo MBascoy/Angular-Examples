@@ -11,7 +11,8 @@ import { ChildComponent } from './child/child.component';
     ChildComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
