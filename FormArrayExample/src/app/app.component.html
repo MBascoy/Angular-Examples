@@ -1,0 +1,20 @@
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+  <p><label for="name">Name </label> <input type="text" id="name" name="name" formControlName="name" /></p>
+
+  Textos:
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <div [formGroupName]="i">
+        text : <input type="text" formControlName="skill" />
+
+        <button (click)="removeSkill(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <p><button type="button" (click)="addSkills()">Add</button></p>
+
+  <p><button type="submit" [disabled]="!skillsForm.valid">Submit</button></p>
+</form>
+
+{{ this.skillsForm.value | json }}
