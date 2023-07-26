@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-name-form
+    (formReady)="addChildForm('personal', $event)"
+  ></app-name-form>
+  <app-contact-form
+    (formReady)="addChildForm('contact', $event)"
+  ></app-contact-form>
+
+  <div>
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </div>
+</form>
