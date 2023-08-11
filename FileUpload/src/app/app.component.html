@@ -1,0 +1,14 @@
+<div>
+  <h2>Subir Archivo</h2>
+  <form>
+    <div>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" [formControl]="name" required>
+    </div>
+    <div>
+      <label for="file">Archivo:</label>
+      <input type="file" id="file" name="file" (change)="handleFileInput($event)" required>
+    </div>
+    <button type="button" (click)="submitForm()">Subir</button>
+  </form>
+</div>
